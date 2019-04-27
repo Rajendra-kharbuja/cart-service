@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  postgres9:
+    image: postgres:latest
+    container_name: cart_postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/Docker/cart_postgres/data:/var/lib/postgresql/data
