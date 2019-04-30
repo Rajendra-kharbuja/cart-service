@@ -14,6 +14,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Cart {
     @Id
     @SequenceGenerator(name = "cart_id_seq", sequenceName = "cart_id_seq", allocationSize = 1)
@@ -21,7 +22,6 @@ public class Cart {
     @Column(name = "cart_id")
     private Long cartId;
 
-    @NotNull
     private String tenant;
 
     @NotNull
