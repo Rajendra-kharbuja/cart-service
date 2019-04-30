@@ -6,26 +6,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "item")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
 
     @Id
+    @SequenceGenerator(name = "item_id_seq", sequenceName = "item_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "item_id_seq")
     private Long itemId;
 
-    @ManyToOne
-    @JoinColumn(name = "cart_id", nullable = false)
-    private Cart cart;
-
+    @NotNull
     private String code;
 
+    @NotNull
     private BigDecimal unitPrice;
+
+    @NotNull
     private String name;
-    private String Description;
-
-
+    private Integer quantity;
 }
