@@ -29,7 +29,7 @@ public class Cart {
     private Timestamp created_at;
 
     @Valid
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cart_id", referencedColumnName = "cart_id")
     private Set<Item> items;
 
