@@ -1,4 +1,4 @@
-package com.general.cart.controler;
+package com.general.cart.controller;
 
 import com.general.cart.CartAbstractTest;
 import com.general.cart.model.entity.Cart;
