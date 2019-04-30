@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import(DatabaseConfiguration.class)
 public class CartApplication {
 
 	public static void main(String[] args) {

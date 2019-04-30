@@ -3,6 +3,7 @@ package com.general.cart.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -27,6 +28,7 @@ public class Cart {
     private String customerId;
     private Timestamp created_at;
 
+    @Valid
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id", referencedColumnName = "cart_id")
     private Set<Item> items;
