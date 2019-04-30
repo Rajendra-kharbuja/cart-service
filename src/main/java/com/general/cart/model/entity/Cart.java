@@ -33,5 +33,5 @@ public class Cart {
     @JoinColumn(name = "cart_id", referencedColumnName = "cart_id")
     private Set<Item> items;
 
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 }

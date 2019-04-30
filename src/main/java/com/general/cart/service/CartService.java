@@ -20,9 +20,10 @@ public class CartService {
 
         cart.setTenant(tenant);
         cart.setCreated_at(Timestamp.from(Instant.now(Clock.systemUTC())));
-        final BigDecimal totalPrice = cart.getItems().stream()
-                .map(item -> item.getUnitPrice().multiply(new BigDecimal(item.getQuantity())))
-                .reduce(new BigDecimal(0), BigDecimal::add);
+        final Double totalPrice = cart.getItems().stream()
+                .map(item -> item.getUnitPrice()*item.getQuantity())
+                .reduce(Double::sum)
+                .orElse(0.0);
         cart.setTotalPrice(totalPrice);
 
         final Cart savedCart = cartRepository.save(cart);

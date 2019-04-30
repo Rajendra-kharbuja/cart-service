@@ -29,7 +29,7 @@ public class Item {
     private String code;
 
     @NotNull
-    private BigDecimal unitPrice;
+    private Double unitPrice;
 
     @NotNull
     private String name;

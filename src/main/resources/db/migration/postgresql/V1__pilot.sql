@@ -4,7 +4,6 @@
 
 CREATE TABLE item (
     item_id  BIGSERIAL NOT NULL,
---    cart_id BIGSERIAL NOT NULL,
     code CHARACTER VARYING(255) NOT NULL,
     unit_price NUMERIC NOT NULL,
     quantity INTEGER NOT NULL,
